@@ -22,7 +22,7 @@ void tela_inicial(void){
     printf("///                 Bacharelado Sistemas de Informação                      ///\n");
     printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
     printf("///               Projeto Sistema de Controle de Biblioteca                 ///\n");
-    printf("///             Developed by @Pedro-E-Rodrigues and @ -- 2022               ///\n");
+    printf("///           Developed by @Pedro-E-Rodrigues and @ArturCandeia -- 2022     ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
