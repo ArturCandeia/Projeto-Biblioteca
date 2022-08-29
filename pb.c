@@ -66,6 +66,10 @@ void tela_equipe(void){
     printf("///      Redes sociais: @pedro__emanuel__                                   ///\n");
     printf("///      Git: https://github.com/Pedro-E-Rodrigues/Projeto-Biblioteca.git   ///\n");
     printf("///                                                                         ///\n");
+    printf("///      Aluno: Artur Morais Candeia                                        ///\n");
+    printf("///      E-mail: Artur.candeia.086@ufrn.edu.br                              ///\n");
+    printf("///      Git: https://github.com/ArturCandeia/Projeto-Biblioteca.git        ///\n");
+    printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
 }
