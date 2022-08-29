@@ -9,7 +9,7 @@ Departamento de Computação e Tecnologia \
 Bacharelado em Sistemas de Informação
 
 Disciplina DCT1106 - Programação \
-Developed by @Pedro-E-Rodrigues
+Developed by @Pedro-E-Rodrigues and @ArturCandeia
 
 # Sistema de Controle de Bibliotecas 
 
