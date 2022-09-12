@@ -1,11 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // Controle de telas 
 void tela_inicial(void);
 void tela_sobre(void);
 void tela_equipe(void);
 void tela_usuarios(void);
-void tela_cadastro_u(void);
 void tela_pesquisar_u(void);
 void tela_editar_u(void);
 void tela_excluir_u(void);
@@ -13,11 +13,10 @@ void tela_excluir_u(void);
 
 // Programa 
 int main(void){
-    void tela_inicial();
-    void tela_sobre();
-    void tela_equipe();
+    tela_inicial();
+    tela_sobre();
+    tela_equipe();
     tela_usuarios();
-    tela_cadastro_u();
     tela_pesquisar_u();
     tela_editar_u();
     tela_excluir_u();
@@ -26,6 +25,7 @@ int main(void){
    
 // Funções 
 void tela_inicial(void){
+    char op;
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -48,6 +48,9 @@ void tela_inicial(void){
     printf("///            5. Módulo Funcionários                                       ///\n");
     printf("///            0. Sair                                                      ///\n");
     printf("///                                                                         ///\n");
+    printf("///            Escolha o módulo desejado: ");
+    scanf("%c", &op);
+    getchar();             
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
@@ -96,6 +99,7 @@ void tela_equipe(void){
 }
 
 void tela_usuarios(void){
+    char op;
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -119,7 +123,9 @@ void tela_usuarios(void){
     printf("///            4. Excluir usuário                                           ///\n");
     printf("///            0. Voltar ao menu principal                                  ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Escolha a opção desejada:                                    ///\n");
+    printf("///            Escolha a opção desejada:");
+    scanf("%c", &op);
+    getchar();   
     printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
