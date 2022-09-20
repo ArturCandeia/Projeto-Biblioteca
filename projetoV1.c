@@ -6,6 +6,7 @@ void tela_inicial(void);
 void tela_sobre(void);
 void tela_equipe(void);
 void tela_usuarios(void);
+void tela_cadastrar_u(void);
 void tela_pesquisar_u(void);
 void tela_editar_u(void);
 void tela_excluir_u(void);
