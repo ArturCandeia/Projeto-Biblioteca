@@ -11,8 +11,8 @@
 // Controle de telas 
 
 char tela_inicial(void);
-void tela_sobre(void);
-void tela_equipe(void);
+
+
 
 // Programa 
 
@@ -84,5 +84,11 @@ char tela_inicial(void){
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
+
     return op;
 }
+
+
+
+
+
