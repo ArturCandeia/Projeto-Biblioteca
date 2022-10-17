@@ -144,6 +144,8 @@ char tela_pesquisar_f(void){
 
 char tela_editar_f(void){
     char esc;
+    char cpf[12];
+    
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -176,6 +178,8 @@ char tela_editar_f(void){
 
 char tela_excluir_f(void){
     char esc;
+    char cpf[12];
+    
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
