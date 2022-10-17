@@ -78,7 +78,11 @@ char tela_emprestimos_u(void){
     printf("///            = = = = = = = = Emprestimos do Úsuario = = = = = = = =       ///\n");
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///            Informe seu nome:                                            ///\n");
+    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
+    getchar();
     printf("///            Informe o seu CPF:                                           ///\n");
+    scanf("%[0-9]", cpf);
+    getchar();
     printf("///                                                                         ///\n");
     scanf("%c", &esc);
     getchar();
@@ -110,7 +114,11 @@ char tela_emprestimos_p(void){
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
     printf("///            Informe seu nome:                                            ///\n");
+    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
+    getchar();
     printf("///            Informe seu CPF:                                             ///\n");
+    scanf("%[0-9]", cpf);
+    getchar();
     printf("///                                                                         ///\n");
     scanf("%c", &esc);
     getchar();
