@@ -67,6 +67,11 @@ char tela_usuarios(void){
 }
 char tela_cadastrar_u(void){
     char esc;
+    char nome[51];
+    char cpf[12];
+    char telefone[12];
+    char email[51];
+    
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -85,9 +90,17 @@ char tela_cadastrar_u(void){
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
     printf("///            Informe seu nome:                                            ///\n");
+    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
+    getchar();
     printf("///            Informe seu CPF:                                             ///\n");
-    printf("///            Informe seu telefone:                                        ///\n");   
-    printf("///            Informe seu Email:                                           ///\n");                                                     ///\n");
+    scanf("%[0-9]", cpf);
+    getchar();
+    printf("///            Informe seu telefone:                                        ///\n");
+    scanf("%[0-9]", telefone);
+    getchar();
+    printf("///            Informe seu Email:                                           ///\n");
+    scanf("%[A-Za-z0-9@._]", email);
+    getchar();
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     scanf("%c", &esc);
     printf("\n");
@@ -98,6 +111,8 @@ char tela_cadastrar_u(void){
 
 char tela_pesquisar_u(void){
     char esc;
+    char cpf[12];
+    
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -116,6 +131,8 @@ char tela_pesquisar_u(void){
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
     printf("///            Informe o ID de usuário:                                     ///\n");
+    scanf("%[0-9]", cpf);
+    getchar();
     printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -128,6 +145,8 @@ char tela_pesquisar_u(void){
 
 char tela_editar_u(void){
     char esc;
+    char cpf[12];
+    
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -146,6 +165,8 @@ char tela_editar_u(void){
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
     printf("///            Informe o ID de usuário:                                     ///\n");
+    scanf("%[0-9]", cpf);
+    getchar();
     printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -159,6 +180,8 @@ char tela_editar_u(void){
 
 char tela_excluir_u(void){
     char esc;
+    char cpf[12];
+    
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -177,6 +200,8 @@ char tela_excluir_u(void){
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
     printf("///            Informe o ID de usuário:                                     ///\n");
+    scanf("%[0-9]", cpf);
+    getchar();
     printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
