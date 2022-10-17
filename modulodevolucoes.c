@@ -61,6 +61,9 @@ char tela_devolucao(void){
 
 char tela_devolucoes_u(void){
     char esc;
+    char nome[51];
+    char cpf[12];
+    
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -78,7 +81,11 @@ char tela_devolucoes_u(void){
     printf("///            = = = = = = = = Devoluções do Úsuario = = = = = = = =        ///\n");
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///            Informe seu nome:                                            ///\n");
+    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
+    getchar();
     printf("///            Informe o seu CPF:                                           ///\n");
+    scanf("%[0-9]", cpf);
+    getchar();
     printf("///                                                                         ///\n");
     scanf("%c", &esc);
     getchar();
@@ -92,6 +99,9 @@ char tela_devolucoes_u(void){
 
 char tela_devolucoes_p(void){
     char esc;
+    char nome[51];
+    char cpf[12];
+    
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -110,7 +120,11 @@ char tela_devolucoes_p(void){
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
     printf("///            Informe seu nome:                                            ///\n");
+    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
+    getchar();
     printf("///            Informe seu CPF:                                             ///\n");
+    scanf("%[0-9]", cpf);
+    getchar();
     printf("///                                                                         ///\n");
     scanf("%c", &esc);
     getchar();
