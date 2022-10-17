@@ -61,6 +61,9 @@ char tela_emprestimos(void){
 
 char tela_emprestimos_u(void){
     char esc;
+    char nome[51];
+    char cpf[12];
+    
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -96,6 +99,9 @@ char tela_emprestimos_u(void){
 
 char tela_emprestimos_p(void){
     char esc;
+    char nome[51];
+    char cpf[12];
+    
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
