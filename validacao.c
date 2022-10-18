@@ -76,7 +76,7 @@ int validar_Bissexto(int aa) {
     return 0;
   }
 }
-
+//https://github.com/flgorgonio/linguasolta/blob/main/util.c
 
 int validar_Data(int dd, int mm, int aa) {
   int maiorDia;
@@ -95,7 +95,7 @@ int validar_Data(int dd, int mm, int aa) {
     return 0;
   return 1;
 }
-
+//https://github.com/flgorgonio/linguasolta/blob/main/util.c
 int validacao_Letra(char c) {
     if (c >= 'A' && c <= 'Z') {
         return 1;
@@ -107,7 +107,7 @@ int validacao_Letra(char c) {
 }
 
 
-
+//https://github.com/flgorgonio/linguasolta/blob/main/util.c
 int validar_Nome(char* nome) {
     for (int i=0; nome[i]!='\0'; i++) {
         if (!validacao_Letra(nome[i])) {
