@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "modulofuncionarios.h"
 
 void menu_nav_funcionarios(void){
@@ -67,7 +68,7 @@ char tela_funcionarios(void){
 char tela_cadastrar_f(void){
     char esc;
     char nome[51];
-    char cpf[12];
+    char cpf[11];
     char telefone[12];
     char email[51];
     
@@ -88,24 +89,28 @@ char tela_cadastrar_f(void){
     printf("///            = = = = = = = = Cadastro de Funcionario = = = = = = = =      ///\n");
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Informe seu nome:                                            ///\n");
+    printf("///            Informe nome do funcionario:                                            ///\n");
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
     getchar();
-    printf("///            Informe seu CPF:                                             ///\n");
+    printf("///            Informe CPF do funcionario:                                             ///\n");
     scanf("%[0-9]", cpf);
     getchar();
-    printf("///            Informe seu telefone:                                        ///\n"); 
+    printf("///            Informe telefone do funcionario:                                        ///\n"); 
     scanf("%[0-9]", telefone);
     getchar();
-    printf("///            Informe seu Email:                                           ///\n");
+    printf("///            Informe Email do funcionario:                                           ///\n");
     scanf("%[A-Za-z0-9@._]", email);
     getchar();
-    printf("///////////////////////////////////////////////////////////////////////////////\n");
     scanf("%c", &esc);
+    getchar();   
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
     return esc;
+
 }
 
 char tela_pesquisar_f(void){
@@ -129,18 +134,21 @@ char tela_pesquisar_f(void){
     printf("///            = = = = = = = = Pesquisar Funcionario = = = = = = = =        ///\n");
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Informe o ID de funcionario:                                 ///\n");
+    printf("///            Informe o CPF do funcionario:                                 ///\n");
     scanf("%[0-9]", cpf);
     getchar();
     printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
-    printf("///////////////////////////////////////////////////////////////////////////////\n");
     scanf("%c", &esc);
+    getchar();   
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
     return esc;
-}
+} 
 
 char tela_editar_f(void){
     char esc;
@@ -163,17 +171,21 @@ char tela_editar_f(void){
     printf("///            = = = = = = = = Editar Funcionario = = = = = = = =           ///\n");
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Informe o ID de Funcionario:                                 ///\n");
+    printf("///            Informe o CPF do Funcionario:                                 ///\n");
     scanf("%[0-9]", cpf);
     getchar();
     printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
-    printf("///////////////////////////////////////////////////////////////////////////////\n");
     scanf("%c", &esc);
+    getchar();   
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
     return esc;
+
 }
 
 char tela_excluir_f(void){
@@ -197,15 +209,19 @@ char tela_excluir_f(void){
     printf("///            = = = = = = = = excluir Funcionario = = = = = = = =          ///\n");
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Informe o ID de funcionario:                                 ///\n");
+    printf("///            Informe o CPF do funcionario:                                 ///\n");
     scanf("%[0-9]", cpf);
     getchar();
     printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
-    printf("///////////////////////////////////////////////////////////////////////////////\n");
     scanf("%c", &esc);
+    getchar();   
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
     return esc;
+   
 }

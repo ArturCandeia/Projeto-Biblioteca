@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "modulodevolucoes.h"
 
 void menu_nav_devolucoes(void){
@@ -87,14 +88,18 @@ char tela_devolucoes_u(void){
     scanf("%[0-9]", cpf);
     getchar();
     printf("///                                                                         ///\n");
-    scanf("%c", &esc);
     getchar();
+    printf("///                                                                         ///\n");
+    scanf("%c", &esc);
+    getchar();   
+    printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
     return esc;
+    
 }
 
 char tela_devolucoes_p(void){
@@ -126,11 +131,15 @@ char tela_devolucoes_p(void){
     scanf("%[0-9]", cpf);
     getchar();
     printf("///                                                                         ///\n");
-    scanf("%c", &esc);
     getchar();
+    scanf("%c", &esc);
+    getchar();   
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
     return esc;
+    
 }

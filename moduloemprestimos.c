@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "moduloemprestimos.h"
 
 void menu_nav_emprestimos(void){
@@ -87,8 +88,11 @@ char tela_emprestimos_u(void){
     scanf("%[0-9]", cpf);
     getchar();
     printf("///                                                                         ///\n");
-    scanf("%c", &esc);
     getchar();
+    printf("///                                                                         ///\n");
+    scanf("%c", &esc);
+    getchar();   
+    printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
@@ -126,8 +130,11 @@ char tela_emprestimos_p(void){
     scanf("%[0-9]", cpf);
     getchar();
     printf("///                                                                         ///\n");
-    scanf("%c", &esc);
     getchar();
+    scanf("%c", &esc);
+    getchar();   
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");

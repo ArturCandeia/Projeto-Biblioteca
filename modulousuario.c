@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "modulousuario.h"
 
 
@@ -67,11 +68,12 @@ char tela_usuarios(void){
 }
 char tela_cadastrar_u(void){
     char esc;
+    char cpf[12]; 
     char nome[51];
-    char cpf[12];
-    char telefone[12];
     char email[51];
-    
+    char nasc[11];
+    char celular[12];
+
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -89,20 +91,27 @@ char tela_cadastrar_u(void){
     printf("///            = = = = = = = = Cadastro de úsuario = = = = = = = =          ///\n");
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Informe seu nome:                                            ///\n");
-    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
-    getchar();
-    printf("///            Informe seu CPF:                                             ///\n");
+    printf("///           CPF (apenas números): ");                                     
     scanf("%[0-9]", cpf);
     getchar();
-    printf("///            Informe seu telefone:                                        ///\n");
-    scanf("%[0-9]", telefone);
+    printf("///           Nome completo: ");
+    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
     getchar();
-    printf("///            Informe seu Email:                                           ///\n");
+    printf("///           E-mail: ");
     scanf("%[A-Za-z0-9@._]", email);
     getchar();
-    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///           Data de Nascimento (dd/mm/aaaa):  ");
+    scanf("%[0-9/]", nasc);
+    getchar();
+    printf("///           Celular  (apenas números): ");
+    scanf("%[0-9]", celular);
+    getchar();                                                     
+    printf("///                                                                       ///\n");
     scanf("%c", &esc);
+    getchar();   
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
@@ -111,8 +120,8 @@ char tela_cadastrar_u(void){
 
 char tela_pesquisar_u(void){
     char esc;
-    char cpf[12];
-    
+    char cpf[12]; 
+
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -130,13 +139,14 @@ char tela_pesquisar_u(void){
     printf("///            = = = = = = = = Pesquisar Usuário = = = = = = = =            ///\n");
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Informe o ID de usuário:                                     ///\n");
+    printf("///           Informe o CPF (apenas números): ");
     scanf("%[0-9]", cpf);
     getchar();
+    scanf("%c", &esc);
+    getchar();   
     printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
-    scanf("%c", &esc);
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
@@ -146,7 +156,7 @@ char tela_pesquisar_u(void){
 char tela_editar_u(void){
     char esc;
     char cpf[12];
-    
+
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -164,13 +174,14 @@ char tela_editar_u(void){
     printf("///            = = = = = = = = Editar Usuário = = = = = = = =               ///\n");
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Informe o ID de usuário:                                     ///\n");
+    printf("///           Informe o CPF (apenas números): ");
     scanf("%[0-9]", cpf);
     getchar();
+    scanf("%c", &esc);
+    getchar();   
     printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
-    scanf("%c", &esc);
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
@@ -181,7 +192,6 @@ char tela_editar_u(void){
 char tela_excluir_u(void){
     char esc;
     char cpf[12];
-    
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -199,13 +209,14 @@ char tela_excluir_u(void){
     printf("///            = = = = = = = = excluir Usuário = = = = = = = =              ///\n");
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Informe o ID de usuário:                                     ///\n");
+    printf("///           Informe o CPF (apenas números): ");
     scanf("%[0-9]", cpf);
     getchar();
+    scanf("%c", &esc);
+    getchar();   
     printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
-    scanf("%c", &esc);
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();

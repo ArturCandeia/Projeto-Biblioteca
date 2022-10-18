@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "modulolivros.h"
 
 void menu_nav_livros(void)
@@ -64,8 +65,6 @@ char tela_livros(void){
 
 char tela_pesquisar_l(void){
     char esc;
-    char nome[51];
-    
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -84,8 +83,6 @@ char tela_pesquisar_l(void){
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
     printf("///            Informe o nome do livro:                                     ///\n");
-    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
-    getchar();
     printf("///                                                                         ///\n");
     scanf("%c", &esc);
     getchar();  
@@ -99,8 +96,6 @@ char tela_pesquisar_l(void){
 
 char tela_escolher_l(void){
     char esc;
-    char nome[51];
-    
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -119,8 +114,6 @@ char tela_escolher_l(void){
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
     printf("///            Informe o nome do livro:                                     ///\n");
-    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
-    getchar();
     printf("///                                                                         ///\n");
     scanf("%c", &esc);
     getchar();  
@@ -134,8 +127,6 @@ char tela_escolher_l(void){
 
 char tela_sobre_l(void){
     char esc;
-    char nome[51];
-    
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -154,8 +145,6 @@ char tela_sobre_l(void){
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
     printf("///            Informe o nome do livro:                                     ///\n");
-    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
-    getchar();
     printf("///                                                                         ///\n");
     scanf("%c", &esc);
     getchar();  
