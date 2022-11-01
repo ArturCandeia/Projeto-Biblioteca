@@ -3,6 +3,14 @@
 #include <unistd.h>
 #include "modulousuario.h"
 
+struct usuarios {
+  char esc;
+  char cpf[12]; 
+  char nome[51];
+  char email[51];
+  char nasc[11];
+  char celular[12];
+};
 
 void menu_nav_usuario(void)
 {
@@ -67,13 +75,7 @@ char tela_usuarios(void){
     
 }
 char tela_cadastrar_u(void){
-    char esc;
-    char cpf[12]; 
-    char nome[51];
-    char email[51];
-    char nasc[11];
-    char celular[12];
-
+  struct usuarios clientes;
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -91,31 +93,21 @@ char tela_cadastrar_u(void){
     printf("///            = = = = = = = = Cadastro de úsuario = = = = = = = =          ///\n");
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
     printf("///                                                                         ///\n");
-    printf("///           CPF (apenas números): ");                                     
-    scanf("%[0-9]", cpf);
-    getchar();
+    printf("///           CPF (apenas números): ");
+    scanf(" %11[^\n]", clientes.cpf);
     printf("///           Nome completo: ");
-    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
-    getchar();
+    scanf(" %50[^\n]", clientes.nome);
     printf("///           E-mail: ");
-    scanf("%[A-Za-z0-9@._]", email);
-    getchar();
+    scanf(" %50[^\n]", clientes.email);
     printf("///           Data de Nascimento (dd/mm/aaaa):  ");
-    scanf("%[0-9/]", nasc);
-    getchar();
+    scanf(" %10[^\n]", clientes.nasc);
     printf("///           Celular  (apenas números): ");
-    scanf("%[0-9]", celular);
-    getchar();                                                     
-    printf("///                                                                       ///\n");
-    scanf("%c", &esc);
-    getchar();   
-    printf("///                                                                         ///\n");
-    printf("///                                                                         ///\n");
+    scanf(" %11[^\n]", clientes.celular);
+    scanf("%c", &clientes.esc);  
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-    getchar();
-    return esc;
+    return clientes.esc;
 }
 
 char tela_pesquisar_u(void){
