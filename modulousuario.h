@@ -19,6 +19,6 @@ void tela_pesquisar_u(void);
 
 char tela_editar_u(void);
 
-void tela_excluir_u(void);
+char tela_excluir_u(void);
 
 void menu_nav_usuario(void);

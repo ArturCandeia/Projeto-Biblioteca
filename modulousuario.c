@@ -1,33 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 #include "modulousuario.h"
 
 typedef struct usuario Usuario;
 
-void menu_nav_usuario(void)
+int menu_nav_usuario(void)
 {
-    char esc = ' ';
-    do {
-        esc = tela_usuarios();
-        switch (esc){
-        case '1':
-            tela_cadastrar_u();
-            break;
-        case '2':
-            tela_pesquisar_u();
-            break;
-        case '3':
-            tela_editar_u();
-            break;
-        case '4':
-            tela_excluir_u();
-        default:
-            printf("Opcao Invalida \n");
-            break;
+    Usuario* alefe;
+  int opcao;
+  printf("Modulo Usuário\n\n");
+  opcao = tela_usuarios();
+  while (opcao != 0) {
+    switch (opcao) {
+      case 1 :  alefe = tela_cadastrar_u();
+                salvaUsuario(alefe);
+                free(alefe);
+                break;
+      case 2 :  alefe = tela_exibir_u();
+                exibe_Usuario(alefe);
+                free(alefe);
+                break;
+/*      case 3 :  // Tente implementar esta função ;)
+                //;
+                break;
+      case 4 :  alefe = buscaAluno();
+                excluiAluno(alefe);
+                free(alefe);
+                break;*/
     }
-
-    } while (esc != '0');
+    opcao = tela_usuarios();
+  }
+  return 0;
 }
 
 char tela_usuarios(void){
@@ -67,117 +72,19 @@ char tela_usuarios(void){
     return esc;
     
 }
-
-void salArq_Usuario(Usuario* usu){
-    FILE *fp;
-fp = fopen("arqUsuario.dat","ab");
-
-if (fp == NULL){
-
-      fp = fopen("arqUsuario.dat","wb");
-      printf("Arquivo inexistente!\n");
-      printf("Criando novo arquivo!");
-
-      if (fp == NULL) {
-        printf("Erro com arquivo!");
-
-      }
-
-      else {
-        fwrite(usu, sizeof(Usuario), 1, fp);
-
-      }
-
-    }
-
-    else {
-        fwrite(usu, sizeof(Usuario), 1, fp);
-
-    }
-
-    fclose(fp);
+void salvaUsuario(Usuario* usu) {
+  FILE* fp;
+  fp = fopen("usuario.dat", "ab");
+  if (fp == NULL) {
+    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+    printf("Não é possível continuar este programa...\n");
+    exit(1);
+  }
+  fwrite(usu, sizeof(Usuario), 1, fp);
+  fclose(fp);
 
 }
 
- void lerArq_Usuario(void) {
-    FILE *fp;
-    Usuario *usu;
-    usu = (Usuario*) malloc(sizeof(Usuario));
-
-    fp = fopen("arqUsuario.dat","rb");
-
-    if (fp == NULL) {
-
-        fp = fopen("arqUsuario.dat","wb");
-        printf("Arquivo inexistente!\n");
-        printf("Criando novo arquivo!");
-
-        if (fp == NULL) {
-            printf("Erro com arquivo!");
-
-        }
-
-    }
-
-    else {
-
-        while (fread(usu, sizeof(Usuario), 1, fp)) {
-
-            if (usu->status != 0) {
-
-                fread(usu, sizeof(Usuario), 1, fp);
-                
-                exibeUsuario(usu);
-
-
-            }
-        }
-    }
-
-    free(usu);
-    fclose(fp);
-
-}
-
-Usuario* achar_Usuario(char *cpf) {
-    FILE* fp;
-    Usuario* usu;
-
-    usu = (Usuario*) malloc(sizeof(Usuario));
-    fp = fopen("arqUsuario.dat", "rb");
-
-    if (fp == NULL) {
-        printf("Ocorreu um erro na abertura do arquivo!\n");
-
-    }
-
-
-    else {
-
-        while(!feof(fp)) {
-            fread(usu, sizeof(Usuario), 1, fp);
-
-            if (strcmp(usu->cpf, cpf) == 0) {
-
-                if (usu->status != 0) {
-                    fclose(fp);
-                    return usu;
-                }
-
-                else {
-                    fclose(fp);
-                    return NULL;
-                }
-
-            } 
-
-        }
-
-    }
-
-    fclose(fp);
-    return NULL;
-}
  
 void exibe_Usuario(Usuario *usu) {
 
@@ -205,7 +112,6 @@ void exibe_Usuario(Usuario *usu) {
     Usuario* tela_cadastrar_u(void){
     Usuario* usu;
     usu = (Usuario*) malloc(sizeof(Usuario));
-
     system("clear||cls");
     printf("\n");                                                                       
     printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
@@ -226,11 +132,10 @@ void exibe_Usuario(Usuario *usu) {
     return usu;
 }
 
-void tela_pesquisar_u(void){
+Usuario* tela_exibir_u(void){
     FILE* fp;
     Usuario* usu;
     char cpf[12];
-    
     system("clear||cls");
     printf("\n");
     printf("///                                                                         ///\n");
@@ -284,36 +189,32 @@ char tela_editar_u(void){
 }
 
 
-void tela_excluir_u(Usuario* usuLido) {
-    FILE* fp;
-    Usuario* usu;
-    char cpf[12];
-    int achou = 0;
-    if (usuLido == NULL) {
-    printf(" O Usuário informado não existe!\n");
-    }
-    else {
-    usu = (Usuario*) malloc(sizeof(Usuario));
-    fp = fopen("arqUsuario.dat", "r+b");
-    if (fp == NULL) {
-      printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
-      printf("Não é possível continuar este programa...\n");
-      exit(1);
-    }
-    while(!feof(fp)) {
-      fread(usu, sizeof(Usuario), 1, fp);
-      if ((usu->cpf == usuLido->cpf) && (usu->status != 'x')) {
-        achou = 1;
-        usu->status = 'x';
-        fseek(fp, -1*sizeof(Usuario), SEEK_CUR);
-        fwrite(usu, sizeof(Usuario), 1, fp);
-        printf("\nUsuário excluído com sucesso!!!\n");
-      }
-    }
-    if (!achou) {
-      printf("\nUsuário não encontrado!\n");
-    }
-    fclose(fp);
-    free(usu);
-  }
+char tela_excluir_u(void){
+    char esc;
+    system("clear||cls");
+    printf("\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///            ===================================================          ///\n");
+    printf("///            = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+    printf("///            > > > > Sistema de Controle de Biblioteca < < < <            ///\n");
+    printf("///            = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+    printf("///            ===================================================          ///\n");
+    printf("///           Developed by @pedro__emanuel__ and @ArturCandeia --2022       ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
+    printf("///            = = = = = = = = excluir Usuário = = = = = = = =              ///\n");
+    printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
+    printf("///                                                                         ///\n");
+    printf("///            Informe o ID de usuário:                                     ///\n");
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    scanf("%c", &esc);
+    printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    getchar();
+    return esc;
 }
