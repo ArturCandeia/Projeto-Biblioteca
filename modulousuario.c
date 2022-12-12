@@ -18,11 +18,11 @@ int menu_nav_usuario(void)
                 salvaUsuario(alefe);
                 free(alefe);
                 break;
-      case 2 :  alefe = tela_exibir_u();
+/*      case 2 :  alefe = tela_exibir_u();
                 exibe_Usuario(alefe);
                 free(alefe);
                 break;
-/*      case 3 :  // Tente implementar esta função ;)
+      case 3 :  // Tente implementar esta função ;)
                 //;
                 break;
       case 4 :  alefe = buscaAluno();
