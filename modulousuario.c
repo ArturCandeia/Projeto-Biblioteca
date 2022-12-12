@@ -132,35 +132,35 @@ void exibe_Usuario(Usuario *usu) {
     return usu;
 }
 
-Usuario* tela_exibir_u(void){
-    FILE* fp;
-    Usuario* usu;
-    char cpf[12];
-    system("clear||cls");
-    printf("\n");
-    printf("///                                                                         ///\n");
-    printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
-    printf("///            = = = = = = = = Pesquisar Usuário = = = = = = = =            ///\n");
-    printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
-    printf("///                                                                         ///\n");
-    printf("///           Informe o CPF (apenas números): ");
-    scanf("%d", &cpf);
-    usu = (Usuario*) malloc(sizeof(Usuario));
-    fp = fopen("arqUsuario.dat", "rb");
-    if (fp == NULL) {
-    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
-    printf("Não é possível continuar este programa...\n");
-    exit(1);
-  }
-  while(!feof(fp)) {
-    fread(usu, sizeof(Usuario), 1, fp);
-    if ((usu->cpf == cpf) && (usu->status != 'x')) {
-      fclose(fp);
-      return usu;
-    }
-  }
-  fclose(fp);
-  return NULL;
+//Usuario* tela_exibir_u(void){
+//    FILE* fp;
+//    Usuario* usu;
+//    char cpf[12];
+//    system("clear||cls");
+//    printf("\n");
+//    printf("///                                                                         ///\n");
+//    printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
+//    printf("///            = = = = = = = = Pesquisar Usuário = = = = = = = =            ///\n");
+//    printf("///            = = = = = = = = = = = = = = = = = = = = = = = =              ///\n");
+//    printf("///                                                                         ///\n");
+//    printf("///           Informe o CPF (apenas números): ");
+//    scanf("%d", &cpf);
+//    usu = (Usuario*) malloc(sizeof(Usuario));
+//    fp = fopen("arqUsuario.dat", "rb");
+//    if (fp == NULL) {
+//    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+//    printf("Não é possível continuar este programa...\n");
+//    exit(1);
+//  }
+//  while(!feof(fp)) {
+//    fread(usu, sizeof(Usuario), 1, fp);
+//    if ((usu->cpf == cpf) && (usu->status != 'x')) {
+//      fclose(fp);
+//      return usu;
+//    }
+//  }
+//  fclose(fp);
+//  return NULL;
 }
 
 char tela_editar_u(void){
