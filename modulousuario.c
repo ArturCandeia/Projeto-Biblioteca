@@ -161,7 +161,7 @@ void exibe_Usuario(Usuario *usu) {
 //  }
 //  fclose(fp);
 //  return NULL;
-}
+//}
 
 char tela_editar_u(void){
     char esc;
