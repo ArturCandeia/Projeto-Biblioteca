@@ -21,4 +21,4 @@ char tela_editar_u(void);
 
 char tela_excluir_u(void);
 
-void menu_nav_usuario(void);
+int menu_nav_usuario(void);
